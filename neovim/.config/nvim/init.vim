@@ -6,6 +6,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
+Plug 'vimwiki/vimwiki'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prabirshrestha/async.vim'
@@ -105,12 +106,25 @@ set tabstop=4
 set lbr
 set tw=500
 
+set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·
+set list
+set colorcolumn=80
+
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
 " Stop certain movements from always going to the first character of a line.
 set nostartofline
+
+" autoclose brackets
+inoremap {<CR> {<CR>}<C-c>O
+inoremap {; {<CR>};<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap (; (<CR>);<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap [; [<CR>];<C-c>O
+inoremap [, [<CR>],<C-c>O
 
 " Aerojump
 nmap <Leader>as <Plug>(AerojumpSpace)

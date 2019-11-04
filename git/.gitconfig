@@ -1,0 +1,111 @@
+[user]
+    name = Karl-Johan Appelholm
+    email = karl-johan.appelholm@husqvarnagroup.com
+[core]
+    editor = nvim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore_global
+[pull]
+    rebase = true
+[push]
+    default = simple
+[color]
+    ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = nvimdiff
+[mergetool]
+    promt = true
+[mergetool "nvimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED
+[alias]
+    a = add
+    aa = add --all
+    ai = add --interactive
+    au = add -u
+    ##############
+    b = branch
+    ba = branch --all
+    bd = branch -d
+    bdd = branch -D
+    br = branch --remotes
+    ##############
+    c = commit
+    cm = commit -m
+    ca = commit --amend
+    ##############
+    cl = clone
+    ##############
+    co = checkout
+    com = checkout master
+    cob = checkout -b
+    ##############
+    d = diff
+    dp = diff --patience
+    dc = diff --cached
+    dt = difftool
+    ##############
+    f = fetch
+    fo = fetch origin
+    fu = fetch upstream
+    ##############
+    l = log
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --decorate
+    ##############
+    m = merge
+    mb = merge-base master HEAD
+    ##############
+    pl = pull
+    pb = pull --rebase
+    ##############
+    ps = push
+    pst = push --tags
+    ##############
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase --interactive
+    rbs = rebase --skip
+    ##############
+    r = reset
+    rs = reset --soft
+    rh = reset --hard
+    ##############
+    rmf = rm -f
+    ##############
+    st = status
+    ##############
+    sa = stash apply
+    sc = stash clear
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    ss = stash save
+    sw = stash show
+    ##############
+    t = tag
+    td = tag -d
+    ##############
+    subadd = submodule add
+    subup = submodule update --init --recursive
+    subupr = submodule update --init --recursive --remote --rebase
+    ##############
+    clall = clean -dfx
+    ##############
