@@ -1,0 +1,12 @@
+= My knowledge base =
+    * [[Tasks]]
+    * Project Guthenberg
+    * Scratchpad
+
+= Work =
+    * [[blem]]
+    * 
+
+= Dev related =
+    * [[tmux]]
+    * [[language server]]

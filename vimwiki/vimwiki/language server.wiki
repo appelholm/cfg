@@ -1,0 +1,4 @@
+== lagnuage server stuff ==
+
+=== Populate .ccls ===
+    python ../tools/ccls_generator.py CONFIG=xxx.cfg TOOLCHAIN=arm-gcc blem > .ccls

@@ -1,0 +1,5 @@
+== Blem ==
+
+- [ ] Release on friday
+- [x] merge hardfault fix
+- [ ] FOTA long time test
