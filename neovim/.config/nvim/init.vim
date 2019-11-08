@@ -7,10 +7,17 @@ Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-commentary'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'yggdroot/indentline'
 
+" Language server stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/async.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'autozimu/LanguageClient-neovim'
 
 call plug#end()
 
@@ -142,6 +149,10 @@ let g:airline_theme = "gruvbox"
 nmap <silent> <Leader>ff :FZF<CR>
 
 "set shortmess-=F
+
+let g:LanguageClient_serverCommands = {
+    \ 'sh': ['bash-language-server', 'start']
+    \ }
 
 source ~/.config/nvim/ccls.vim
 source ~/.config/nvim/coc.vim

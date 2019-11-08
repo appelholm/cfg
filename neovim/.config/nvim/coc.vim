@@ -133,3 +133,7 @@ nn <silent> <M-r> :LspReferences<cr>
 nn <f2> :LspRename<cr>
 nn <silent> <M-a> :LspWorkspaceSymbol<cr>
 nn <silent> <M-l> :LspDocumentSymbol<cr>
+
+"coc-yank
+nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
+
