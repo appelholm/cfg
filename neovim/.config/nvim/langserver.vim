@@ -1,3 +1,7 @@
+let g:LanguageClient_serverCommands = {
+    \ 'sh': ['bash-language-server', 'start']
+    \ }
+
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
       \ 'name': 'ccls',

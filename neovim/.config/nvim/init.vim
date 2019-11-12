@@ -11,6 +11,8 @@ Plug 'tpope/vim-commentary'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'yggdroot/indentline'
+Plug 'gcavallanti/vim-noscrollbar'
+Plug 'edkolev/tmuxline.vim'
 
 " Language server stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -20,7 +22,6 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'autozimu/LanguageClient-neovim'
 
 call plug#end()
-
 
 let mapleader = ","
 
@@ -143,16 +144,34 @@ nmap <Leader>ad <Plug>(AerojumpDefault) " Boring mode
 set background=dark
 colorscheme gruvbox
 let g:airline_theme = "gruvbox"
-"set termguicolors
 
 " FZF
 nmap <silent> <Leader>ff :FZF<CR>
 
-"set shortmess-=F
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+" let g:airline_theme = 'dark'
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
+let g:powerline_pycmd="py3"
 
-let g:LanguageClient_serverCommands = {
-    \ 'sh': ['bash-language-server', 'start']
-    \ }
+" function! Noscrollbar(...)
+"     let w:airline_section_z = '%{noscrollbar#statusline()}'
+" endfunction
+" call airline#add_statusline_func('Noscrollbar')
 
-source ~/.config/nvim/ccls.vim
-source ~/.config/nvim/coc.vim
+" Source other files, if they exist
+function! SourceFileIfExists(file)
+    if filereadable(expand(a:file))
+        exe 'source' a:file
+    endif
+endfunction
+
+call SourceFileIfExists("~/.config/nvim/langserver.vim")
+call SourceFileIfExists("~/.config/nvim/coc.vim")
