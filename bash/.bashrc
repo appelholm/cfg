@@ -11,3 +11,5 @@ PS1='[\u@\h \W]\$ '
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export vimdiff="nvim -d"
+
+eval "$(thefuck --alias)"

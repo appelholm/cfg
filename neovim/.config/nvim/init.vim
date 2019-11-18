@@ -21,13 +21,13 @@ Plug 'autozimu/LanguageClient-neovim'
 
 call plug#end()
 
-
 let mapleader = ","
 
 set history=700
 
 filetype plugin on
 filetype indent on
+syntax enable
 
 set wildignore=*.o,*~,*.pyc
 
@@ -73,9 +73,6 @@ set tm=500
 " Enable use of the mouse for all modes
 set mouse=a
 
-
-syntax enable
-
 nnoremap <silent> <Leader>t :NERDTreeToggle<CR>
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
@@ -94,10 +91,8 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
-
 " Remap VIM 0 to first non-blank character
 map 0 ^
-
 
 " Use spaces instead of tabs
 set expandtab
@@ -138,6 +133,9 @@ nmap <Leader>as <Plug>(AerojumpSpace)
 nmap <Leader>ab <Plug>(AerojumpBolt)
 nmap <Leader>aa <Plug>(AerojumpFromCursorBolt)
 nmap <Leader>ad <Plug>(AerojumpDefault) " Boring mode
+
+" Bolt
+nmap <Leader>ss :Bolt<CR>
 
 " Color
 set background=dark
