@@ -6,11 +6,16 @@ Plug 'morhetz/gruvbox'
 Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-commentary'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'yggdroot/indentline'
+Plug 'frazrepo/vim-rainbow'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-surround'
 
 " Language server stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -44,7 +49,7 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -93,6 +98,9 @@ map <leader>tm :tabmove
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
+
+" Remove all trailing whitespaces
+map <leader>cw :%s/\s\+$//e<cr>
 
 " Use spaces instead of tabs
 set expandtab
@@ -146,7 +154,14 @@ let g:airline_theme = "gruvbox"
 " FZF
 nmap <silent> <Leader>ff :FZF<CR>
 
-"set shortmess-=F
+" vim-rainbow
+let g:rainbow_active = 1
+
+" tagbar
+nmap <Leader>tb :TagbarToggle<CR>
+
+" airline
+let g:airline_section_z = '%l %p%%'
 
 let g:LanguageClient_serverCommands = {
     \ 'sh': ['bash-language-server', 'start']
