@@ -18,14 +18,11 @@ fpath+=("$HOME/.zsh/pure")
 autoload -Uz promptinit
 promptinit
 prompt pure
-#PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
-#autoload -Uz vcs_info
-# precmd_vcs_info() { vcs_info }
-# precmd_functions+=( precmd_vcs_info )
-# setopt prompt_subst
-# RPROMPT=\$vcs_info_msg_0_
-# zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
-# zstyle ':vcs_info:*' enable git
+zstyle ':prompt:pure:git:branch'        color "yellow"
+zstyle ':prompt:pure:git:dirty'         color "#fabd2f"
+zstyle ':prompt:pure:prompt:success'    color "cyan"
+zstyle ':prompt:pure:prompt:error'      color "red"
+zstyle ':prompt:pure:path'              color "blue"
 
 # Options added by me
 setopt correct
@@ -46,7 +43,7 @@ alias -s {c,h,json,yaml,py}=nvim
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# vi mode
+# load module files
 for file in ~/.zsh/autoload/*; do
     source "$file"
 done
