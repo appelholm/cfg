@@ -161,6 +161,7 @@ let g:rainbow_active = 1
 nmap <Leader>tb :TagbarToggle<CR>
 
 " airline
+let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%l %p%%'
 
 let g:LanguageClient_serverCommands = {
