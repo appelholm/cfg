@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>qmk</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<div id="QMK"><h2 id="QMK" class="header"><a href="#QMK">QMK</a></h2></div>
+
+<p>
+generate .ccls file
+echo 'clang' &gt; .ccls; cat .build/obj_dz60_appelholm/cflags.txt | sed 's/ -/\
+-/g' | sed 's/ //' | sed 's/ *$//' &gt;&gt; .ccls
+</p>
+
+</body>
+</html>

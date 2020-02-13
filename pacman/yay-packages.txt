@@ -1,0 +1,15 @@
+ccls-git 20191228-1
+cordless-git 2019.10.27-1
+cquery v20180718-8
+googler 4.0-1
+jlink-software-and-documentation 24:6.62a-0
+lazygit 0.13-1
+lf 13-4
+ozone 20:3.10d-1
+polybar 3.4.2-1
+posy-cursors 3.7-1
+qmk 0.0.27-3
+spotify 1:1.1.10.546-3
+srecord 1.64-2
+xorg-server-xdmx 1.20.6-1
+yay 9.4.4-1

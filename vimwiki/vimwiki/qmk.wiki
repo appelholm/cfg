@@ -1,0 +1,5 @@
+== QMK ==
+
+generate .ccls file
+echo 'clang' > .ccls; cat .build/obj_dz60_appelholm/cflags.txt | sed 's/ -/\
+-/g' | sed 's/ //' | sed 's/ *$//' >> .ccls

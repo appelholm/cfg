@@ -5,6 +5,7 @@
     editor = nvim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore_global
+    pager = "diff-so-fancy | less --tabs=4 -RFX"
 [pull]
     rebase = true
 [push]
@@ -12,25 +13,25 @@
 [color]
     ui = auto
 [color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
-	prompt = false
+    prompt = false
 [merge]
-	tool = nvimdiff
+    tool = nvimdiff
 [mergetool]
     promt = true
 [mergetool "nvimdiff"]

@@ -5,8 +5,10 @@
 
 = Work =
     * [[blem]]
-    * 
 
 = Dev related =
     * [[tmux]]
     * [[language server]]
+    * [[arch]]
+    * [[qmk]]
+    * [[useful tools]]

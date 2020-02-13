@@ -13,6 +13,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+
 # Prompt
 fpath+=("$HOME/.zsh/pure")
 autoload -Uz promptinit

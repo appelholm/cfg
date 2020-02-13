@@ -1,0 +1,5 @@
+== Arch stuff ==
+
+ * Set keyboard layout to us international
+    localectl set-x11-keymap us pc105 altgr-intl
+
