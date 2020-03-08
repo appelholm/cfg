@@ -16,6 +16,7 @@ compinit
 
 # Prompt
 fpath+=("$HOME/.zsh/pure")
+fpath+=('/data/data/com.termux/files/usr/lib/node_modules/pure-prompt/functions')
 autoload -Uz promptinit
 promptinit
 prompt pure
@@ -42,6 +43,9 @@ alias ls='ls --color=tty'
 alias ll='ls -la'
 
 alias -s {c,h,json,yaml,py}=nvim
+
+alias uu='pkg update && pkg upgrade'
+
 
 # persist vi mode
 accept-line() { prev_mode=$KEYMAP; zle .accept-line }

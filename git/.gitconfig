@@ -1,11 +1,11 @@
 [user]
     name = Karl-Johan Appelholm
-    email = karl-johan.appelholm@husqvarnagroup.com
+    email = karljohan.appelholm@gmail.com
 [core]
     editor = nvim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore_global
-    pager = "diff-so-fancy | less --tabs=4 -RFX"
+    #pager = "diff-so-fancy | less --tabs=4 -RFX"
 [pull]
     rebase = true
 [push]

@@ -1,11 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
-Plug 'morhetz/gruvbox'
-Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vimwiki/vimwiki'
@@ -15,31 +12,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'yggdroot/indentline'
 Plug 'frazrepo/vim-rainbow'
 Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'APZelos/blamer.nvim'
 Plug 'rhysd/git-messenger.vim'
-Plug 'jlanzarotta/bufexplorer'
 
 " Language server stuff
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/async.vim'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/async.vim'
+"Plug 'jackguo380/vim-lsp-cxx-highlight'
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
 
 call plug#end()
 
 let mapleader = ","
 
 set history=1000
-
-syntax enable
-filetype indent plugin on
 
 set spelllang=en
 
@@ -82,10 +73,6 @@ set noerrorbells
 set visualbell
 set timeoutlen=500
 
-" Enable use of the mouse for all modes
-set mouse=a
-set mousehide
-
 " Tab stuff
 set tabstop=8
 set softtabstop=4
@@ -99,6 +86,7 @@ set list
 set colorcolumn=80
 
 set autoindent
+syntax enable
 filetype plugin indent on
 set wrap
 
@@ -110,9 +98,10 @@ set nostartofline
 " Color
 set termguicolors
 set background=dark
-let g:gruvbox_material_background='hard'
-colorscheme gruvbox-material
-let g:airline_theme = 'gruvbox_material'
+"let g:gruvbox_material_background='hard'
+"colorscheme gruvbox-material
+"let g:airline_theme = 'gruvbox_material'
+colorscheme nord
 
 " Move up and down one line also for wrapped lines
 nnoremap                j               gj
@@ -149,6 +138,7 @@ nnoremap    <silent>    <Return>        :nohls<Return>
 
 " Leader w saves current buffer
 nnoremap    <silent>    <leader>w       :w<cr>
+nnoremap    <silent>    <leader>q       :q<cr>
 
 " autoclose brackets
 inoremap                {<CR>           {<CR>}<C-c>O
@@ -165,20 +155,8 @@ nnoremap    <silent>    <leader>ss      :setlocal spell<cr>
 " NERDTree
 nnoremap    <silent>    <Leader>t       :NERDTreeToggle<CR>
 
-" Aerojump
-nnoremap                <Leader>as      <Plug>(AerojumpSpace)
-nnoremap                <Leader>ab      <Plug>(AerojumpBolt)
-nnoremap                <Leader>aa      <Plug>(AerojumpFromCursorBolt)
-nnoremap                <Leader>ad      <Plug>(AerojumpDefault)
-
-" Bolt
-nnoremap                <Leader>ss      :Bolt<CR>
-
 " FZF
 nnoremap    <silent>    <Leader>ff      :FZF<CR>
-
-" tagbar
-nnoremap                <Leader>tb      :TagbarToggle<CR>
 
 " vim-rainbow
 let g:rainbow_active = 1
@@ -187,12 +165,5 @@ let g:rainbow_active = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = '%l %p%%'
 
-let g:LanguageClient_serverCommands = {
-    \ 'sh': ['bash-language-server', 'start']
-    \ }
-
-" git blamer
-"let g:blamer_enabled = 0
-
-source ~/.config/nvim/ccls.vim
-source ~/.config/nvim/coc.vim
+"source ~/.config/nvim/ccls.vim
+"source ~/.config/nvim/coc.vim
