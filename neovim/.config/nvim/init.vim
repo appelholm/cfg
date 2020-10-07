@@ -4,8 +4,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vimwiki/vimwiki'
@@ -20,17 +18,17 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'APZelos/blamer.nvim'
 Plug 'rhysd/git-messenger.vim'
-Plug 'jlanzarotta/bufexplorer'
+"Plug 'jlanzarotta/bufexplorer'
 
 " Language server stuff
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/async.vim'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/async.vim'
+"Plug 'jackguo380/vim-lsp-cxx-highlight'
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
 
 call plug#end()
 
@@ -165,15 +163,6 @@ nnoremap    <silent>    <leader>ss      :setlocal spell<cr>
 " NERDTree
 nnoremap    <silent>    <Leader>t       :NERDTreeToggle<CR>
 
-" Aerojump
-nnoremap                <Leader>as      <Plug>(AerojumpSpace)
-nnoremap                <Leader>ab      <Plug>(AerojumpBolt)
-nnoremap                <Leader>aa      <Plug>(AerojumpFromCursorBolt)
-nnoremap                <Leader>ad      <Plug>(AerojumpDefault)
-
-" Bolt
-nnoremap                <Leader>ss      :Bolt<CR>
-
 " FZF
 nnoremap    <silent>    <Leader>ff      :FZF<CR>
 
@@ -194,5 +183,5 @@ let g:LanguageClient_serverCommands = {
 " git blamer
 "let g:blamer_enabled = 0
 
-source ~/.config/nvim/ccls.vim
-source ~/.config/nvim/coc.vim
+"source ~/.config/nvim/ccls.vim
+"source ~/.config/nvim/coc.vim
