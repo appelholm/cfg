@@ -4,8 +4,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vimwiki/vimwiki'
@@ -166,13 +166,13 @@ nnoremap    <silent>    <leader>ss      :setlocal spell<cr>
 nnoremap    <silent>    <Leader>t       :NERDTreeToggle<CR>
 
 " Aerojump
-nnoremap                <Leader>as      <Plug>(AerojumpSpace)
-nnoremap                <Leader>ab      <Plug>(AerojumpBolt)
-nnoremap                <Leader>aa      <Plug>(AerojumpFromCursorBolt)
-nnoremap                <Leader>ad      <Plug>(AerojumpDefault)
+"nnoremap                <Leader>as      <Plug>(AerojumpSpace)
+"nnoremap                <Leader>ab      <Plug>(AerojumpBolt)
+"nnoremap                <Leader>aa      <Plug>(AerojumpFromCursorBolt)
+"nnoremap                <Leader>ad      <Plug>(AerojumpDefault)
 
 " Bolt
-nnoremap                <Leader>ss      :Bolt<CR>
+"nnoremap                <Leader>ss      :Bolt<CR>
 
 " FZF
 nnoremap    <silent>    <Leader>ff      :FZF<CR>
@@ -194,5 +194,5 @@ let g:LanguageClient_serverCommands = {
 " git blamer
 "let g:blamer_enabled = 0
 
-source ~/.config/nvim/ccls.vim
+"source ~/.config/nvim/ccls.vim
 source ~/.config/nvim/coc.vim

@@ -5,6 +5,13 @@ Xcursor.theme: posy-black-tiny
 ! ~/.config/gtk-3.0/settings.ini
 ! ~/.gtkrc-2.0
 
+xterm*name:             xterm-256color
+xterm*locale:           true
+xterm*utf8:             2
+xterm*faceName:         xft:monospace:size=11
+xterm*dynamicColors:    true
+
+
 URxvt.font: xft:Fantasque Sans Mono:size=15
 URxvt.iso14755: false
 URxvt.iso14755_52: false
