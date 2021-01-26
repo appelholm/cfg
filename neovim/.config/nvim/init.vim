@@ -4,8 +4,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-"Plug 'ripxorip/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vimwiki/vimwiki'
@@ -96,7 +94,7 @@ set smarttab
 " Display all characters
 set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·
 set list
-set colorcolumn=80
+set colorcolumn=120
 
 set autoindent
 filetype plugin indent on
@@ -163,16 +161,19 @@ inoremap                [,              [<CR>],<C-c>O
 nnoremap    <silent>    <leader>ss      :setlocal spell<cr>
 
 " NERDTree
-nnoremap    <silent>    <Leader>t       :NERDTreeToggle<CR>
+function! IsNERDTreeOpen()
+    return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
 
-" Aerojump
-"nnoremap                <Leader>as      <Plug>(AerojumpSpace)
-"nnoremap                <Leader>ab      <Plug>(AerojumpBolt)
-"nnoremap                <Leader>aa      <Plug>(AerojumpFromCursorBolt)
-"nnoremap                <Leader>ad      <Plug>(AerojumpDefault)
+function! SyncNERDTree()
+    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+        NERDTreeFind
+        wincmd p
+    endif
+endfunction
 
-" Bolt
-"nnoremap                <Leader>ss      :Bolt<CR>
+autocmd BufRead * call SyncNERDTree()
+nnoremap    <silent>    <Leader>t       :NERDTreeToggle<CR><c-w>l:call SyncNERDTree()<cr><c-w>h
 
 " FZF
 nnoremap    <silent>    <Leader>ff      :FZF<CR>
@@ -194,5 +195,13 @@ let g:LanguageClient_serverCommands = {
 " git blamer
 "let g:blamer_enabled = 0
 
-"source ~/.config/nvim/ccls.vim
+" Scratch buffer
+function! OpenScratchBuffer()
+    split
+    noswapfile hide enew
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    file scratch
+endfunction
+
 source ~/.config/nvim/coc.vim

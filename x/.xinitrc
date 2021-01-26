@@ -8,7 +8,7 @@
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # Load notification daemon
-dunst &
+#dunst &
 
 # Set wallpaper with feh
 [[ -f ~/.fehbg ]] && sh ~/.fehbg
