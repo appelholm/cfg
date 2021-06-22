@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_histfile
-HISTSIZE=1000
-SAVEHIST=10000
+HISTSIZE=10000
+SAVEHIST=100000
 setopt appendhistory autocd extendedglob
 unsetopt beep
 bindkey -v
@@ -42,6 +42,10 @@ alias ls='ls --color=tty'
 alias ll='ls -la'
 
 alias -s {c,h,json,yaml,py}=nvim
+
+# Environment
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/WindRiver/compilers/diab-5.9.6.7/LINUX386/bin:$HOME/WindRiver/compilers/diab-5.9.6.7":${PATH}
+export WRSD_LICENSE_FILE="$HOME/WindRiver/license"
 
 # persist vi mode
 accept-line() { prev_mode=$KEYMAP; zle .accept-line }

@@ -13,12 +13,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'yggdroot/indentline'
 Plug 'frazrepo/vim-rainbow'
 Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'APZelos/blamer.nvim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'jlanzarotta/bufexplorer'
+"Plug 'honza/vim-snippets'
+"Plug 'sirver/ultisnips'
+Plug 'liuchengxu/vista.vim'
 
 " Language server stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -178,8 +180,8 @@ nnoremap    <silent>    <Leader>t       :NERDTreeToggle<CR><c-w>l:call SyncNERDT
 " FZF
 nnoremap    <silent>    <Leader>ff      :FZF<CR>
 
-" tagbar
-nnoremap                <Leader>tb      :TagbarToggle<CR>
+" vista
+nnoremap    <silent>    <Leader>v       :Vista!!<CR>
 
 " vim-rainbow
 let g:rainbow_active = 1
@@ -195,6 +197,11 @@ let g:LanguageClient_serverCommands = {
 " git blamer
 "let g:blamer_enabled = 0
 
+" Ultisnips
+"let g:UltisnipsExpandTrigger="<c-s>"
+"let g:UltisnipsJumpForwardTrigger="<c-b>"
+"let g:UltisnipsJumpBackwardTrigger="<c-z>"
+
 " Scratch buffer
 function! OpenScratchBuffer()
     split
@@ -203,5 +210,16 @@ function! OpenScratchBuffer()
     setlocal bufhidden=hide
     file scratch
 endfunction
+
+" cpp man
+function! s:JbzCppMan()
+    let old_isk = &iskeyword
+    setl iskeyword+=:
+    let str = expand("<cword>")
+    let &l:iskeyword = old_isk
+    execute 'Man ' . str
+endfunction
+command! JbzCppMan :call s:JbzCppMan()
+au FileType cpp nnoremap <buffer>K :JbzCppMan<CR>
 
 source ~/.config/nvim/coc.vim
